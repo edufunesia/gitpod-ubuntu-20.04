@@ -11,11 +11,12 @@ ports:
 - port: 6942
   onOpen: ignore
 - port: 80
-  onOpen: ignore
+  onOpen: notify
 workspaceLocation: "."
 tasks:
 - command: start-vnc-session.sh
 - command: android.sh
 - command: chrome.sh
 - command: gp await-port 6080 && gp preview $(gp url 6080)
+- command: gp await-port 80 && gp preview $(gp url 80)
 
